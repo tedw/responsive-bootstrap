@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+/* Add breakpoint labels for JS purposes */
+@include mq-breakpoints( $sans );
+
+
+/* Min-width Tests */
+h1 {
+	color: #555;
+	
+	/* This is just for testing. You would not normally use a media query for the smallest view. */
+	@include breakpoint( alpha ) {
+		color: #900c00;
+	}
+	
+	@include breakpoint( beta ) {
+		color: #00287A;
+	}
+	@include breakpoint( gamma ) {
+		color: #206014;
+	}
+	@include breakpoint( delta ) {
+		color: #A05511;
+	}
+	@include breakpoint( epsilon ) {
+		color: #0B6947;
+		font-size: 56px;
+	}
+}
+
+/* Max-width Tests */
+h1 {
+	
+	/* This is just for testing. You would not normally use a media query for the largest view. */
+	@include max-breakpoint( epsilon ) {
+		font-size: 48px;
+	}
+	
+	@include max-breakpoint( delta ) {
+		font-size: 40px;
+	}
+	@include max-breakpoint( gamma ) {
+		font-size: 32px;
+	}
+	@include max-breakpoint( beta ) {
+		font-size: 24px;
+	}
+	@include max-breakpoint( alpha ) {
+		font-size: 16px;
+	}
+}
