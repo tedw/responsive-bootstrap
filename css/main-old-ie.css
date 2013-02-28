@@ -106,34 +106,34 @@ body:after {
 /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 h1 {
   z-index: 1;
-  color: #900c00;
+  color: #D02929;
   z-index: 479;
 }
 @media only screen and (min-width: 30em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
-    color: #00287A;
+    color: #F98D24;
     z-index: 480;
   }
 }
 @media only screen and (min-width: 35.5em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
-    color: #206014;
+    color: #F2C20C;
     z-index: 568;
   }
 }
 @media only screen and (min-width: 48em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
-    color: #A05511;
+    color: #1DA71D;
     z-index: 768;
   }
 }
 @media only screen and (min-width: 60em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
-    color: #0B6947;
+    color: #1251BE;
     font-size: 56px;
     z-index: 960;
   }

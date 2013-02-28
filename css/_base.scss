@@ -12,27 +12,27 @@ h1 {
 	
 	// This is just for testing. You would not normally use a media query for the smallest view.
 	@include breakpoint( alpha ) {
-		color: #900c00;
+		color: #D02929;
 		z-index: 479;
 	}
 	
 	@include breakpoint( beta ) {
-		color: #00287A;
+		color: #F98D24;
 		z-index: 480;
 	}
 	
 	@include breakpoint( gamma ) {
-		color: #206014;
+		color: #F2C20C;
 		z-index: 568;
 	}
 	
 	@include breakpoint( delta ) {
-		color: #A05511;
+		color: #1DA71D;
 		z-index: 768;
 	}
 	
 	@include breakpoint( epsilon ) {
-		color: #0B6947;
+		color: #1251BE;
 		font-size: 56px;
 		z-index: 960;
 	}
