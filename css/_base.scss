@@ -8,46 +8,63 @@
 
 /* Min-width Tests */
 h1 {
-	color: #555;
+	z-index: 1;
 	
-	/* This is just for testing. You would not normally use a media query for the smallest view. */
+	// This is just for testing. You would not normally use a media query for the smallest view.
 	@include breakpoint( alpha ) {
 		color: #900c00;
+		z-index: 479;
 	}
 	
 	@include breakpoint( beta ) {
 		color: #00287A;
+		z-index: 480;
 	}
+	
 	@include breakpoint( gamma ) {
 		color: #206014;
+		z-index: 568;
 	}
+	
 	@include breakpoint( delta ) {
 		color: #A05511;
+		z-index: 768;
 	}
+	
 	@include breakpoint( epsilon ) {
 		color: #0B6947;
 		font-size: 56px;
+		z-index: 960;
 	}
 }
 
 /* Max-width Tests */
 h1 {
+	z-index: 1;
 	
-	/* This is just for testing. You would not normally use a media query for the largest view. */
+	// This is just for testing. You would not normally use a media query for the largest view.
 	@include max-breakpoint( epsilon ) {
 		font-size: 48px;
+		z-index: 960;
 	}
 	
 	@include max-breakpoint( delta ) {
 		font-size: 40px;
+		z-index: 768;
 	}
+	
 	@include max-breakpoint( gamma ) {
 		font-size: 32px;
+		z-index: 658;
 	}
+	
 	@include max-breakpoint( beta ) {
 		font-size: 24px;
+		z-index: 480;
 	}
+	
 	@include max-breakpoint( alpha ) {
 		font-size: 16px;
+		z-index: 479;
 	}
 }

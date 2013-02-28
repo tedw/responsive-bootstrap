@@ -104,26 +104,29 @@ body:after {
 /* Min-width Tests */
 /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 h1 {
-  color: #555;
-  /* This is just for testing. You would not normally use a media query for the smallest view. */
+  z-index: 1;
   color: #900c00;
+  z-index: 479;
 }
 @media only screen and (min-width: 30em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     color: #00287A;
+    z-index: 480;
   }
 }
 @media only screen and (min-width: 35.5em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     color: #206014;
+    z-index: 568;
   }
 }
 @media only screen and (min-width: 48em) {
   /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     color: #A05511;
+    z-index: 768;
   }
 }
 @media only screen and (min-width: 60em) {
@@ -131,41 +134,47 @@ h1 {
   h1 {
     color: #0B6947;
     font-size: 56px;
+    z-index: 960;
   }
 }
 
 /* Max-width Tests */
-/* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 h1 {
-  /* This is just for testing. You would not normally use a media query for the largest view. */
+  z-index: 1;
 }
 @media only screen and (max-width: 60em) {
-  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     font-size: 48px;
+    z-index: 960;
   }
 }
 @media only screen and (max-width: 59.9375em) {
-  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     font-size: 40px;
+    z-index: 768;
   }
 }
 @media only screen and (max-width: 47.9375em) {
-  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     font-size: 32px;
+    z-index: 658;
   }
 }
 @media only screen and (max-width: 35.4375em) {
-  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     font-size: 24px;
+    z-index: 480;
   }
 }
 @media only screen and (max-width: 29.9375em) {
-  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   h1 {
     font-size: 16px;
+    z-index: 479;
   }
 }
