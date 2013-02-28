@@ -2,7 +2,7 @@
    Custom Mixins
    ========================================================================== */
 
-@function makePixel( $val ) {
+@function px( $val ) {
 	@if unitless( $val ) {
 		$val: $val * 1px;
 	}
@@ -10,8 +10,8 @@
 }
 
 /* Convert px to em */
-@function calc-em( $px, $base: 16px ) {
-	@return ( makePixel($px) / makePixel($base) ) * 1em;
+@function em( $px, $base: 16px ) {
+	@return ( px($px) / px($base) ) * 1em;
 }
 
 /* Border Radius */
@@ -66,7 +66,11 @@ $img-path: '../img/' !default; /* Set image path if not previously defined */
 	}
 }
 
+
 /* Add Breakpoint Labels (for use in JS) */
+
+$fixed-width: false !default;
+
 // References:
 // http://adactio.com/journal/5429/
 // http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
@@ -108,14 +112,14 @@ $break-count: length($breakpoints);
 			// Get next breakpoint width, subtract 1px
 			$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 
-			@media ( max-width: calc-em( $max-width ) )  {
+			@media ( max-width: em( $max-width ) )  {
 				html { font-family: '#{nth($break, 1)}' }
 				body:after { content: '#{nth($break, 1)}' }
 			};
 		}
 		// Last breakpoint
 		@else if $index == $break-count {
-			@media ( min-width: calc-em( nth($break, 2) ) ) {
+			@media ( min-width: em( nth($break, 2) ) ) {
 				html { font-family: '#{nth($break, 1)}' }
 				body:after { content: '#{nth($break, 1)}' }
 			};
@@ -125,7 +129,7 @@ $break-count: length($breakpoints);
 			// Get next breakpoint width, subtract 1px
 			$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 			
-			@media ( min-width: calc-em( nth($break, 2) ) ) and ( max-width: calc-em( $max-width ) ) {
+			@media ( min-width: em( nth($break, 2) ) ) and ( max-width: em( $max-width ) ) {
 				html { font-family: '#{nth($break, 1)}' }
 				body:after { content: '#{nth($break, 1)}' }
 			};
@@ -141,25 +145,25 @@ $break-count: length($breakpoints);
 // Reference:
 // http://jakearchibald.github.com/sass-ie/
 
-$fix-mqs: false !default;
+// Var already defined above
+// $fixed-width: false !default;
 
 @mixin breakpoint( $name ) {
-	$width: 0;
 	$index: 1; // Create index var to use in @each loop
 
 	// Find width cutoff of breakpoint
 	@each $break in $breakpoints {
 		@if $name == nth($break, 1) {
 			
-			// Output plain CSS if fixed width is >= $width
-			@if $fix-mqs {
-				@if $index == 1 or $fix-mqs >= nth($break, 2) {
+			// Output plain CSS if fixed width is >= current breakpoint width
+			@if $fixed-width {
+				@if $index == 1 or $fixed-width >= nth($break, 2) {
 					@content;
 				}
 			}
 			// Wrap code in media query
 			@else if $index > 1 {
-				@media only screen and ( min-width: calc-em( nth($break, 2) ) ) {
+				@media only screen and ( min-width: em( nth($break, 2) ) ) {
 					@content;
 				}
 			}
@@ -176,31 +180,36 @@ $fix-mqs: false !default;
 
 
 @mixin max-breakpoint( $name ) {
-	$width: 0;
 	$index: 1; // Create index var to use in @each loop
 
 	// Find width cutoff of breakpoint
 	@each $break in $breakpoints {
 		@if $name == nth($break, 1) {
-			
-			// Output plain CSS if fixed width is >= $width
-			@if $fix-mqs {
-				@if $index == $break-count or $fix-mqs >= $width {
+
+			// Check if fixed width has been set
+			@if $fixed-width {
+				// For first breakpoint, add styles if fixed width is < second breakpoint
+				@if $index == 1 and $fixed-width < px( nth( nth($breakpoints, 2), 2 ) ) {
+					@content;
+				}
+				// For all other breakopints, add styles if fixed width <= breakpoint
+				@else if $index > 1 and $fixed-width <= nth($break, 2) {
 					@content;
 				}
 			}
-			// Wrap code in media query
+			// If not fixed width, add appropriate media query
 			@else if $index < $break-count {
 				// Get next breakpoint width, subtract 1px
 				$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 				
-				@media only screen and ( max-width: calc-em( $max-width ) ) {
+				@media only screen and ( max-width: em( $max-width ) ) {
 					@content;
 				}
 			}
-			// Largest breakpoint
+			// Last breakpoint
 			@else {
-				@media only screen and ( max-width: calc-em( nth($break, 2) ) ) {
+				// Use breakpoint width
+				@media only screen and ( max-width: em( nth($break, 2) ) ) {
 					@content;
 				}
 			}

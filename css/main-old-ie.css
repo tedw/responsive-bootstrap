@@ -1,1 +1,172 @@
-html{font-family:"alpha"}body{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif}body:after{content:"alpha";display:none}@media (max-width: 29.9375em){html{font-family:"alpha"}body:after{content:"alpha"}}@media (min-width: 30em) and (max-width: 35.4375em){html{font-family:"beta"}body:after{content:"beta"}}@media (min-width: 35.5em) and (max-width: 47.9375em){html{font-family:"gamma"}body:after{content:"gamma"}}@media (min-width: 48em) and (max-width: 59.9375em){html{font-family:"delta"}body:after{content:"delta"}}@media (min-width: 60em){html{font-family:"epsilon"}body:after{content:"epsilon"}}h1{color:#555;color:#900c00;color:#00287A;color:#206014;color:#A05511;color:#0B6947;font-size:56px}h1{font-size:48px;font-size:40px;font-size:32px;font-size:24px;font-size:16px}
+/* Old IE Stylesheet */
+/* ==========================================================================
+   Project Variables
+   ========================================================================== */
+/* Breakpoints */
+/* Typography */
+/* Colors */
+/* Image Path */
+/* Bourbon - http://bourbon.io/ */
+/* ==========================================================================
+   Custom Mixins
+   ========================================================================== */
+/* Convert px to em */
+/* Border Radius */
+/* Background Color Using RGBA */
+/* Background Clip */
+/* useful if you don't want a bg color from leaking outside the border */
+/* Background Image Text Clip (webkit-only) */
+/* High Resolution Media Query (use Bourbon http://bourbon.io/docs/#hidpi-media-query) */
+/*@mixin hires-mq( $ratio ) {
+	@media only screen and (-webkit-min-device-pixel-ratio: $ratio), only screen and (min-resolution: ($ratio * 96) + 'dpi') {
+		@content;
+	}
+}*/
+/* High Resolution Background Image */
+/* Set image path if not previously defined */
+/* Add Breakpoint Labels (for use in JS) */
+/* Generate Media Queries */
+/* Code for Old IE */
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+/* Add breakpoint labels for JS purposes */
+/* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+html {
+  font-family: "alpha";
+}
+
+/* line 94, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+body {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* line 96, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+body:after {
+  content: "alpha";
+  display: none;
+}
+
+@media (max-width: 29.9375em) {
+  /* line 116, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  html {
+    font-family: "alpha";
+  }
+
+  /* line 117, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  body:after {
+    content: "alpha";
+  }
+}
+@media (min-width: 30em) and (max-width: 35.4375em) {
+  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  html {
+    font-family: "beta";
+  }
+
+  /* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  body:after {
+    content: "beta";
+  }
+}
+@media (min-width: 35.5em) and (max-width: 47.9375em) {
+  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  html {
+    font-family: "gamma";
+  }
+
+  /* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  body:after {
+    content: "gamma";
+  }
+}
+@media (min-width: 48em) and (max-width: 59.9375em) {
+  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  html {
+    font-family: "delta";
+  }
+
+  /* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  body:after {
+    content: "delta";
+  }
+}
+@media (min-width: 60em) {
+  /* line 123, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  html {
+    font-family: "epsilon";
+  }
+
+  /* line 124, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  body:after {
+    content: "epsilon";
+  }
+}
+/* Min-width Tests */
+/* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+h1 {
+  color: #555;
+  /* This is just for testing. You would not normally use a media query for the smallest view. */
+  color: #900c00;
+}
+@media only screen and (min-width: 30em) {
+  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    color: #00287A;
+  }
+}
+@media only screen and (min-width: 35.5em) {
+  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    color: #206014;
+  }
+}
+@media only screen and (min-width: 48em) {
+  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    color: #A05511;
+  }
+}
+@media only screen and (min-width: 60em) {
+  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    color: #0B6947;
+    font-size: 56px;
+  }
+}
+
+/* Max-width Tests */
+/* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+h1 {
+  /* This is just for testing. You would not normally use a media query for the largest view. */
+}
+@media only screen and (max-width: 60em) {
+  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 59.9375em) {
+  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 47.9375em) {
+  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 35.4375em) {
+  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 29.9375em) {
+  /* line 34, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  h1 {
+    font-size: 16px;
+  }
+}
