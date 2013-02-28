@@ -2,11 +2,17 @@
    Custom Mixins
    ========================================================================== */
 
+/* Convert value to px */
 @function px( $val ) {
-	@if unitless( $val ) {
-		$val: $val * 1px;
+	// Return value if already in pixels
+	@if unit( $val ) == 'px' {
+		@return $val;
 	}
-	@return $val;
+	// Otherwise, strip units and convert to px
+	// http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass
+	@else {
+		@return $val / ($val * 0 + 1) * 1px;
+	}
 }
 
 /* Convert px to em */

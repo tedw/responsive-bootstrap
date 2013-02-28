@@ -10,6 +10,7 @@
 /* ==========================================================================
    Custom Mixins
    ========================================================================== */
+/* Convert value to px */
 /* Convert px to em */
 /* Border Radius */
 /* Background Color Using RGBA */
@@ -31,73 +32,73 @@
    Base Styles
    ========================================================================== */
 /* Add breakpoint labels for JS purposes */
-/* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 97, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 html {
   font-family: "alpha";
 }
 
-/* line 94, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 100, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-/* line 96, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 102, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body:after {
   content: "alpha";
   display: none;
 }
 
 @media (max-width: 29.9375em) {
-  /* line 116, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 122, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "alpha";
   }
 
-  /* line 117, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 123, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "alpha";
   }
 }
 @media (min-width: 30em) and (max-width: 35.4375em) {
-  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "beta";
   }
 
-  /* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "beta";
   }
 }
 @media (min-width: 35.5em) and (max-width: 47.9375em) {
-  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "gamma";
   }
 
-  /* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "gamma";
   }
 }
 @media (min-width: 48em) and (max-width: 59.9375em) {
-  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "delta";
   }
 
-  /* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "delta";
   }
 }
 @media (min-width: 60em) {
-  /* line 123, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 129, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "epsilon";
   }
 
-  /* line 124, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 130, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "epsilon";
   }
