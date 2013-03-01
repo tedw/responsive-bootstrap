@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Custom Mixins
+   Custom Mixins and Functions
    ========================================================================== */
 
 /* Convert value to px */
@@ -18,6 +18,11 @@
 /* Convert px to em */
 @function em( $px, $base: 16px ) {
 	@return ( px($px) / px($base) ) * 1em;
+}
+
+/* Convert ratio to percent */
+@function percent( $ratio ) {
+	@return $ratio * 100%;
 }
 
 /* Border Radius */
@@ -73,7 +78,7 @@ $img-path: '../img/' !default; /* Set image path if not previously defined */
 }
 
 
-/* Add Breakpoint Labels (for use in JS) */
+/* Add Breakpoint Labels (for use in JS) and base font sizes */
 
 $fixed-width: false !default;
 
@@ -97,7 +102,10 @@ $break-count: length($breakpoints);
 	html { font-family: "#{nth( nth($breakpoints, 1), 1 )}" }
 
 	// Override <html> inheritance.
-	body { font-family: #{$font-stack} }
+	body {
+		font-family: #{$font-stack};
+		font-size: percent( nth( nth($breakpoints, 1), 3) );
+	}
 
 	body:after {
 		content: "#{nth( nth($breakpoints, 1), 1 )}";
@@ -121,6 +129,9 @@ $break-count: length($breakpoints);
 			@media ( max-width: em( $max-width ) )  {
 				html { font-family: '#{nth($break, 1)}' }
 				body:after { content: '#{nth($break, 1)}' }
+				@if length($break) == 3 {
+					body { font-size: percent( nth($break, 3) ) }
+				}
 			};
 		}
 		// Last breakpoint
@@ -128,6 +139,9 @@ $break-count: length($breakpoints);
 			@media ( min-width: em( nth($break, 2) ) ) {
 				html { font-family: '#{nth($break, 1)}' }
 				body:after { content: '#{nth($break, 1)}' }
+				@if length($break) == 3 {
+					body { font-size: percent( nth($break, 3) ) }
+				}
 			};
 		}
 		// All other breakpoints
@@ -138,6 +152,9 @@ $break-count: length($breakpoints);
 			@media ( min-width: em( nth($break, 2) ) ) and ( max-width: em( $max-width ) ) {
 				html { font-family: '#{nth($break, 1)}' }
 				body:after { content: '#{nth($break, 1)}' }
+				@if length($break) == 3 {
+					body { font-size: percent( nth($break, 3) ) }
+				}
 			};
 		}
 		

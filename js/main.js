@@ -78,7 +78,7 @@
 
 	/* DEV - Update <h1> text with breakpoint label */
 	var printViewport = function() {
-		$('h1').text(getViewport() + " - " + winWidth() + 'px');
+		$('.mq').text(getViewport() + " - " + winWidth() + 'px');
 	};
 	printViewport();
 

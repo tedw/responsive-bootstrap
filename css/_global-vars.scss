@@ -2,12 +2,12 @@
    Project Variables
    ========================================================================== */
 
-/* Breakpoints */
-$breakpoints: alpha,
-              beta 480,
-              gamma 568,
-              delta 768,
-              epsilon 960;
+/* Breakpoints (Label, width, font ratio) */
+$breakpoints: alpha		0		0.8,
+              beta		480		0.9,
+              gamma		568		1,
+              delta		768		1.1,
+              epsilon	960		1.2;
 
 
 /* Typography */

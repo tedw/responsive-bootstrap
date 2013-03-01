@@ -2,12 +2,18 @@
    Base Styles
    ========================================================================== */
 
+
 /* Add breakpoint labels for JS purposes */
 @include mq-breakpoints( $sans );
 
 
+body {
+	line-height: 1.5;
+}
+
+
 /* Min-width Tests */
-h1 {
+.mq {
 	z-index: 1;
 	
 	// This is just for testing. You would not normally use a media query for the smallest view.
@@ -39,7 +45,7 @@ h1 {
 }
 
 /* Max-width Tests */
-h1 {
+.mq {
 	z-index: 1;
 	
 	// This is just for testing. You would not normally use a media query for the largest view.
@@ -68,3 +74,5 @@ h1 {
 		z-index: 479;
 	}
 }
+
+

@@ -1,16 +1,17 @@
 /* ==========================================================================
    Project Variables
    ========================================================================== */
-/* Breakpoints */
+/* Breakpoints (Label, width, font ratio) */
 /* Typography */
 /* Colors */
 /* Image Path */
 /* Bourbon - http://bourbon.io/ */
 /* ==========================================================================
-   Custom Mixins
+   Custom Mixins and Functions
    ========================================================================== */
 /* Convert value to px */
 /* Convert px to em */
+/* Convert ratio to percent */
 /* Border Radius */
 /* Background Color Using RGBA */
 /* Background Clip */
@@ -24,115 +25,164 @@
 }*/
 /* High Resolution Background Image */
 /* Set image path if not previously defined */
-/* Add Breakpoint Labels (for use in JS) */
+/* Add Breakpoint Labels (for use in JS) and base font sizes */
 /* Generate Media Queries */
 /* Code for Old IE */
+/* ==========================================================================
+   Custom Helper Styles
+   ========================================================================== */
+/* HTML5 Boilerplate Styles */
+/* Clearfix */
+/* Image replacement */
+/* Hidden */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
 /* ==========================================================================
    Base Styles
    ========================================================================== */
 /* Add breakpoint labels for JS purposes */
-/* line 97, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 html {
   font-family: "alpha";
 }
 
-/* line 100, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 80%;
 }
 
-/* line 102, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body:after {
   content: "alpha";
   display: none;
 }
 
 @media (max-width: 29.9375em) {
-  /* line 122, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "alpha";
   }
 
-  /* line 123, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "alpha";
   }
+
+  body {
+    font-size: 80%;
+  }
 }
 @media (min-width: 30em) and (max-width: 35.4375em) {
-  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "beta";
   }
 
-  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "beta";
   }
+
+  body {
+    font-size: 90%;
+  }
 }
 @media (min-width: 35.5em) and (max-width: 47.9375em) {
-  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "gamma";
   }
 
-  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "gamma";
   }
+
+  body {
+    font-size: 100%;
+  }
 }
 @media (min-width: 48em) and (max-width: 59.9375em) {
-  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "delta";
   }
 
-  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "delta";
   }
+
+  body {
+    font-size: 110.0%;
+  }
 }
 @media (min-width: 60em) {
-  /* line 129, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "epsilon";
   }
 
-  /* line 130, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "epsilon";
   }
+
+  body {
+    font-size: 120%;
+  }
 }
+body {
+  line-height: 1.5;
+}
+
 /* Min-width Tests */
-/* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-h1 {
+.mq {
   z-index: 1;
   color: #D02929;
   z-index: 479;
 }
 @media only screen and (min-width: 30em) {
-  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     color: #F98D24;
     z-index: 480;
   }
 }
 @media only screen and (min-width: 35.5em) {
-  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     color: #F2C20C;
     z-index: 568;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     color: #1DA71D;
     z-index: 768;
   }
 }
 @media only screen and (min-width: 60em) {
-  /* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     color: #1251BE;
     font-size: 56px;
     z-index: 960;
@@ -140,41 +190,35 @@ h1 {
 }
 
 /* Max-width Tests */
-/* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-h1 {
+.mq {
   z-index: 1;
 }
 @media only screen and (max-width: 60em) {
-  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     font-size: 48px;
     z-index: 960;
   }
 }
 @media only screen and (max-width: 59.9375em) {
-  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     font-size: 40px;
     z-index: 768;
   }
 }
 @media only screen and (max-width: 47.9375em) {
-  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     font-size: 32px;
     z-index: 658;
   }
 }
 @media only screen and (max-width: 35.4375em) {
-  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     font-size: 24px;
     z-index: 480;
   }
 }
 @media only screen and (max-width: 29.9375em) {
-  /* line 42, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
-  h1 {
+  .mq {
     font-size: 16px;
     z-index: 479;
   }
