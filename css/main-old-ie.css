@@ -10,9 +10,11 @@
 /* ==========================================================================
    Custom Mixins and Functions
    ========================================================================== */
+/* Strip Units */
 /* Convert value to px */
 /* Convert px to em */
 /* Convert ratio to percent */
+/* Font Size */
 /* Border Radius */
 /* Background Color Using RGBA */
 /* Background Clip */
@@ -79,99 +81,99 @@
    Base Styles
    ========================================================================== */
 /* Add breakpoint labels for JS purposes */
-/* line 102, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 111, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 html {
   font-family: "alpha";
 }
 
-/* line 105, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 114, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 80%;
 }
 
-/* line 110, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 119, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body:after {
   content: "alpha";
   display: none;
 }
 
 @media (max-width: 29.9375em) {
-  /* line 130, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "alpha";
   }
 
-  /* line 131, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "alpha";
   }
 
-  /* line 133, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 142, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body {
     font-size: 80%;
   }
 }
 @media (min-width: 30em) and (max-width: 35.4375em) {
-  /* line 153, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 162, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "beta";
   }
 
-  /* line 154, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 163, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "beta";
   }
 
-  /* line 156, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 165, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body {
     font-size: 90%;
   }
 }
 @media (min-width: 35.5em) and (max-width: 47.9375em) {
-  /* line 153, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 162, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "gamma";
   }
 
-  /* line 154, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 163, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "gamma";
   }
 
-  /* line 156, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 165, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body {
     font-size: 100%;
   }
 }
 @media (min-width: 48em) and (max-width: 59.9375em) {
-  /* line 153, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 162, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "delta";
   }
 
-  /* line 154, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 163, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "delta";
   }
 
-  /* line 156, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 165, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body {
     font-size: 110.0%;
   }
 }
 @media (min-width: 60em) {
-  /* line 140, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 149, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "epsilon";
   }
 
-  /* line 141, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 150, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "epsilon";
   }
 
-  /* line 143, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 152, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body {
     font-size: 120%;
   }
@@ -181,36 +183,42 @@ body {
   line-height: 1.5;
 }
 
+/* line 14, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+h1 {
+  font-size: 26px;
+  font-size: 1.625em;
+}
+
 /* Min-width Tests */
-/* line 16, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 20, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .mq {
   z-index: 1;
   color: #D02929;
   z-index: 479;
 }
 @media only screen and (min-width: 30em) {
-  /* line 16, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 20, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #F98D24;
     z-index: 480;
   }
 }
 @media only screen and (min-width: 35.5em) {
-  /* line 16, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 20, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #F2C20C;
     z-index: 568;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 16, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 20, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #1DA71D;
     z-index: 768;
   }
 }
 @media only screen and (min-width: 60em) {
-  /* line 16, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 20, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #1251BE;
     font-size: 56px;
@@ -219,40 +227,40 @@ body {
 }
 
 /* Max-width Tests */
-/* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 52, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .mq {
   z-index: 1;
 }
 @media only screen and (max-width: 60em) {
-  /* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 52, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 48px;
     z-index: 960;
   }
 }
 @media only screen and (max-width: 59.9375em) {
-  /* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 52, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 40px;
     z-index: 768;
   }
 }
 @media only screen and (max-width: 47.9375em) {
-  /* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 52, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 32px;
     z-index: 658;
   }
 }
 @media only screen and (max-width: 35.4375em) {
-  /* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 52, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 24px;
     z-index: 480;
   }
 }
 @media only screen and (max-width: 29.9375em) {
-  /* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 52, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 16px;
     z-index: 479;

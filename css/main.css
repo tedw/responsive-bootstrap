@@ -9,9 +9,11 @@
 /* ==========================================================================
    Custom Mixins and Functions
    ========================================================================== */
+/* Strip Units */
 /* Convert value to px */
 /* Convert px to em */
 /* Convert ratio to percent */
+/* Font Size */
 /* Border Radius */
 /* Background Color Using RGBA */
 /* Background Clip */
@@ -155,6 +157,11 @@ body:after {
 }
 body {
   line-height: 1.5;
+}
+
+h1 {
+  font-size: 26px;
+  font-size: 1.625em;
 }
 
 /* Min-width Tests */

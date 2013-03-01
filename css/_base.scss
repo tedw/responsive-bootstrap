@@ -11,6 +11,10 @@ body {
 	line-height: 1.5;
 }
 
+h1 {
+	@include font-size( 26px );
+}
+
 
 /* Min-width Tests */
 .mq {
