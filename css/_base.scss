@@ -9,6 +9,7 @@
 
 body {
 	line-height: 1.5;
+	margin: 0 5%;
 }
 
 h1 {
@@ -43,8 +44,13 @@ h1 {
 	
 	@include breakpoint( epsilon ) {
 		color: #1251BE;
-		font-size: 56px;
 		z-index: 960;
+	}
+	
+	@include breakpoint( zeta ) {
+		color: #7411A6;
+		font-size: 56px;
+		z-index: 1024;
 	}
 }
 
@@ -53,6 +59,11 @@ h1 {
 	z-index: 1;
 	
 	// This is just for testing. You would not normally use a media query for the largest view.
+	@include max-breakpoint( zeta ) {
+		font-size: 56px;
+		z-index: 1024;
+	}
+	
 	@include max-breakpoint( epsilon ) {
 		font-size: 48px;
 		z-index: 960;

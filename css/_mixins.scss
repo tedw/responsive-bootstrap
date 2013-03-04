@@ -8,7 +8,17 @@
 	@return $val / ($val * 0 + 1);
 }
 
-/* Convert value to px */
+/* Set value as percent */
+@function percent( $val ) {
+	// Return value if already a pecentage
+	@if unit( $val ) == '%' {
+		@return $val;
+	}
+	// Otherwise, strip units and convert to percentage
+	@return clean( $val ) * 100%;
+}
+
+/* Set value as px */
 @function px( $val ) {
 	// Return value if already in pixels
 	@if unit( $val ) == 'px' {
@@ -18,20 +28,27 @@
 	@return clean( $val ) * 1px;
 }
 
-/* Convert px to em */
-@function em( $px, $base: 16px ) {
-	@return ( px($px) / px($base) ) * 1em;
+/* Convert px to relative untis */
+@function ratio( $px, $base: 16 ) {
+	@return ( clean($px) / $base );
 }
 
-/* Convert ratio to percent */
-@function percent( $ratio ) {
-	@return $ratio * 100%;
+/* Convert px to em */
+@function em( $px ) {
+	@return ratio($px) * 1em;
 }
+
+/* Convert px to rem */
+@function rem( $px ) {
+	@return ratio($px) * 1rem;
+}
+
+
 
 /* Font Size */
 @mixin font-size( $size, $base: 16 ) {
 	font-size: px( $size );
-	font-size: px( $size ) / px( $base ) * 1em;
+	font-size: px( $size ) / px( $base ) * 1rem;
 }
 
 /* Border Radius */
@@ -64,12 +81,13 @@
 	-webkit-background-clip: text;
 }
 
-/* High Resolution Media Query (use Bourbon http://bourbon.io/docs/#hidpi-media-query) */
-/*@mixin hires-mq( $ratio ) {
-	@media only screen and (-webkit-min-device-pixel-ratio: $ratio), only screen and (min-resolution: ($ratio * 96) + 'dpi') {
-		@content;
-	}
-}*/
+// DEPRECIATED - High Resolution Media Query
+// Use Bourbon mixin http://bourbon.io/docs/#hidpi-media-query
+// @mixin hires-mq( $ratio ) {
+// 	@media only screen and (-webkit-min-device-pixel-ratio: $ratio), only screen and (min-resolution: ($ratio * 96) + 'dpi') {
+// 		@content;
+// 	}
+// }
 
 /* High Resolution Background Image */
 $img-path: '../img/' !default; /* Set image path if not previously defined */
@@ -87,14 +105,13 @@ $img-path: '../img/' !default; /* Set image path if not previously defined */
 }
 
 
-/* Add Breakpoint Labels (for use in JS) and base font sizes */
-
-$fixed-width: false !default;
-
+/* Responsive Breakpoint Magic (breakpoint labels, bast font size) */
 // References:
 // http://adactio.com/journal/5429/
 // http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
 // https://github.com/registerguard/js-media-queries
+
+$fixed-width: false !default;
 
 // Default breakpoints if not defined
 $breakpoints: small,
@@ -104,70 +121,74 @@ $breakpoints: small,
 // Get number of breakpoints
 $break-count: length($breakpoints);
 
-// Iterate through breakpoints
+// We need to pass in font stack to override the fake font-family on the <html> element
 @mixin mq-breakpoints( $font-stack: "'Helvetica Neue', Arial, Helvetica, sans-serif" ) {
 
-	// Fallback label
-	html { font-family: "#{nth( nth($breakpoints, 1), 1 )}" }
-
-	// Override <html> inheritance.
-	body {
-		font-family: #{$font-stack};
-		font-size: percent( nth( nth($breakpoints, 1), 3) );
+	// Fallback breakpoint label (add "font-size: 100%" if not already setting it elsewhere)
+	html {
+		font-family: 'no-mq';
+		font-size: percent( $base-font-size / 16px );
 	}
 
+	// Override <html> font-family
+	body { font-family: #{$font-stack} }
+	
+	// Fallback breakpoint label (for modern browsers)
 	body:after {
-		content: "#{nth( nth($breakpoints, 1), 1 )}";
+		content: 'no-mq';
 		display: none;
 	}
 
-	// Get number of breakpoints
+	// Number of breakpoints
 	$break-count: length($breakpoints);
 	
-	// Create index var to use in @each loop
+	// Create index var for use in the @each loop below
 	$index: 1;
 	
-	// Loop through each breakpoint and generated the appropriate media query code
-	// Set the font-family on the pseudo element, as iOS 4 cannot get the CSS content with JS
+	// Loop through each breakpoint and generate the appropriate media query.
+	// Save the breakpoint label as 'content' on body:after for modern browsers, using the following JS:
+	// window.getComputedStyle(document.body,':after').getPropertyValue('content')
+	// On browsers that don't support the above (iOS 4, old Android), fallback to using font-family on the <html> element.
 	@each $break in $breakpoints {
+		// Default media query
+		$mq: 'screen';
+		
 		// First breakpoint
 		@if $index == 1 {
 			// Get next breakpoint width, subtract 1px
 			$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
-
-			@media ( max-width: em( $max-width ) )  {
-				html { font-family: '#{nth($break, 1)}' }
-				body:after { content: '#{nth($break, 1)}' }
-				@if length($break) == 3 {
-					body { font-size: percent( nth($break, 3) ) }
-				}
-			};
+			
+			// Media query string
+			$mq: '(max-width: #{em( $max-width )})';
 		}
+		
 		// Last breakpoint
 		@else if $index == $break-count {
-			@media ( min-width: em( nth($break, 2) ) ) {
-				html { font-family: '#{nth($break, 1)}' }
-				body:after { content: '#{nth($break, 1)}' }
-				@if length($break) == 3 {
-					body { font-size: percent( nth($break, 3) ) }
-				}
-			};
+			// Media query string
+			$mq: '(min-width: #{em( nth($break, 2) )})';
 		}
+		
 		// All other breakpoints
 		@else {
 			// Get next breakpoint width, subtract 1px
 			$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 			
-			@media ( min-width: em( nth($break, 2) ) ) and ( max-width: em( $max-width ) ) {
-				html { font-family: '#{nth($break, 1)}' }
-				body:after { content: '#{nth($break, 1)}' }
-				@if length($break) == 3 {
-					body { font-size: percent( nth($break, 3) ) }
-				}
-			};
+			// Media query string
+			$mq: '(min-width: #{em( nth($break, 2) )} ) and ( max-width: #{em( $max-width )} )';
 		}
 		
-		// Increment counter
+		// Generate the media query code
+		@media #{$mq} {
+			html {
+				font-family: '#{nth($break, 1)}';
+				@if length($break) == 3 {
+					font-size: percent( ($base-font-size + (nth($break, 3)*1)) / 16px );
+				}
+			}
+			body:after { content: '#{nth($break, 1)}' }
+		};
+		
+		// Increment the counter
 		$index: $index + 1;
 	}
 }

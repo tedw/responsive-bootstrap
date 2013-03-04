@@ -91,7 +91,21 @@
 	smokesignals.convert(windowResize);
 
 	/* Update on window resize */
-	$window.bind('resize', debounce(function( evt ) {
+	// $window.bind('resize', debounce(function( evt ) {
+	// 	// Make sure width has actually changed, iOS triggers resize on scroll sometimes (http://jsbin.com/igocaf/latest)
+	// 	if ( winWidth() !== curWidth ) {
+	// 		// Emit resize event
+	// 		windowResize.emit('resize');
+	// 		
+	// 		printViewport();
+	// 
+	// 		// Update width
+	// 		curWidth = winWidth();
+	// 	}
+	// }, 200));
+
+	// No debounce
+	$window.bind('resize', function( evt ) {
 		// Make sure width has actually changed, iOS triggers resize on scroll sometimes (http://jsbin.com/igocaf/latest)
 		if ( winWidth() !== curWidth ) {
 			// Emit resize event
@@ -102,7 +116,7 @@
 			// Update width
 			curWidth = winWidth();
 		}
-	}, 200));
+	});
 
 
 	/* Create orientation change event using smokesignals.js */
