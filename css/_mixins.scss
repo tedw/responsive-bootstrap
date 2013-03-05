@@ -11,11 +11,11 @@
 
 // Calculate relative units
 @function ratio( $val, $context, $unit: 1 ) {
-	// Check if same units
+	// If units are the same, they will cancel out when dividing
 	@if unit( $val ) == unit( $context ) {
 		@return ($val / $context) * $unit;
 	}
-	// If mixed units, clean values
+	// If mixed units, clean them before dividing
 	@else {
 		@return ( clean($val) / clean($context) ) * $unit;
 	}
@@ -36,7 +36,8 @@
 	@return ratio( $val, $context, 1em );
 }
 
-/* Convert any number of fixed values to relative units ( vals, context, units ) */
+
+/* Convert any number of fixed values to percentages ( vals, context ) */
 @function percentage( $args... ) {
 	
 	// Get values
@@ -48,12 +49,6 @@
 		$context: nth($args, 2);
 	}
 	
-/*	// Get units, fallback to 1
-	$units: 1;
-	@if length( $args ) == 3 {
-		$units: nth($args, 3);
-	}
-*/	
 	// Create empty list to append converted values to
 	$output: ();
 	
@@ -62,25 +57,75 @@
 		$val: nth( $vals, $i );
 		// Only convert values in px
 		@if unit( $val ) == 'px' {
-/*			// Fallback
-			$converted: $val;
-			
-			@if ( $units == 'em' ) {
-				$converted: fixed-to-em( $val, $context );
-			}
-			@else if ( $units == 'rem' ) {
-				$converted: fixed-to-rem( $val, $context );
-			}
-			@else if ( $units == '%' ) {
-				$converted: fixed-to-percentage( $val, $context );
-			}
-			
-			// Add converted value to output list
-			$output: append( $output, $converted, space );
-			
-*/			$output: append( $output, fixed-to-percentage( $val, $context ), space );
+			$output: append( $output, fixed-to-percentage( $val, $context ), space );
 		}
-		// If already in a relative units, don't need to convert
+		// Otherwise, return the same value
+		@else {
+			$output: append( $output, $val, space );
+		}
+	}
+	
+	// Return converted values
+	@return $output;
+}
+
+
+/* Convert any number of fixed values to ems ( vals, context ) */
+@function em( $args... ) {
+	
+	// Get values
+	$vals: nth($args, 1);
+	
+	// Get context, fallback to 16
+	$context: 16;
+	@if length( $args ) == 2 {
+		$context: nth($args, 2);
+	}
+	
+	// Create empty list to append converted values to
+	$output: ();
+	
+	// Loop through each value, convert, and append to $output list
+	@for $i from 1 through length( $vals ) {
+		$val: nth( $vals, $i );
+		// Only convert values in px
+		@if unit( $val ) == 'px' {
+			$output: append( $output, fixed-to-em( $val, $context ), space );
+		}
+		// Otherwise, return the same value
+		@else {
+			$output: append( $output, $val, space );
+		}
+	}
+	
+	// Return converted values
+	@return $output;
+}
+
+
+/* Convert any number of fixed values to rems ( vals, context ) */
+@function rem( $args... ) {
+	
+	// Get values
+	$vals: nth($args, 1);
+	
+	// Get context, fallback to 16
+	$context: 16;
+	@if length( $args ) == 2 {
+		$context: nth($args, 2);
+	}
+	
+	// Create empty list to append converted values to
+	$output: ();
+	
+	// Loop through each value, convert, and append to $output list
+	@for $i from 1 through length( $vals ) {
+		$val: nth( $vals, $i );
+		// Only convert values in px
+		@if unit( $val ) == 'px' {
+			$output: append( $output, fixed-to-rem( $val, $context ), space );
+		}
+		// Otherwise, return the same value
 		@else {
 			$output: append( $output, $val, space );
 		}
@@ -224,6 +269,7 @@ $break-count: length($breakpoints);
 	html {
 		font-family: 'no-mq';
 		font-size: percent( $base-font-size / 16px );
+		line-height: clean( $base-line-height );
 	}
 
 	// Override <html> font-family
@@ -255,13 +301,13 @@ $break-count: length($breakpoints);
 			$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 			
 			// Media query string
-			$mq: '(max-width: #{em( $max-width )})';
+			$mq: '(max-width: #{fixed-to-em( $max-width )})';
 		}
 		
 		// Last breakpoint
 		@else if $index == $break-count {
 			// Media query string
-			$mq: '(min-width: #{em( nth($break, 2) )})';
+			$mq: '(min-width: #{fixed-to-em( nth($break, 2) )})';
 		}
 		
 		// All other breakpoints
@@ -270,7 +316,7 @@ $break-count: length($breakpoints);
 			$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 			
 			// Media query string
-			$mq: '(min-width: #{em( nth($break, 2) )} ) and ( max-width: #{em( $max-width )} )';
+			$mq: '(min-width: #{fixed-to-em( nth($break, 2) )} ) and ( max-width: #{fixed-to-em( $max-width )} )';
 		}
 		
 		// Generate the media query code
@@ -312,7 +358,7 @@ $break-count: length($breakpoints);
 			}
 			// Wrap code in media query
 			@else if $index > 1 {
-				@media only screen and ( min-width: em( nth($break, 2) ) ) {
+				@media only screen and ( min-width: fixed-to-em( nth($break, 2) ) ) {
 					@content;
 				}
 			}
@@ -351,14 +397,14 @@ $break-count: length($breakpoints);
 				// Get next breakpoint width, subtract 1px
 				$max-width: nth( nth($breakpoints, $index + 1), 2 ) - 1;
 				
-				@media only screen and ( max-width: em( $max-width ) ) {
+				@media only screen and ( max-width: fixed-to-em( $max-width ) ) {
 					@content;
 				}
 			}
 			// Last breakpoint
 			@else {
 				// Use breakpoint width
-				@media only screen and ( max-width: em( nth($break, 2) ) ) {
+				@media only screen and ( max-width: fixed-to-em( nth($break, 2) ) ) {
 					@content;
 				}
 			}

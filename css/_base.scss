@@ -3,97 +3,146 @@
    ========================================================================== */
 
 
-/* Add breakpoint labels for JS purposes */
-@include mq-breakpoints( $sans );
+/* Add breakpoint labels for JS purposes, set base font size */
+@include mq-breakpoints( $serif );
 
 
+html {
+	@include transition( font-size 100ms ease-in-out );
+}
+
+
+/* Highlight the 45th and 75th characters to determime optimal line length */
+// http://www.webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/
+// http://trentwalton.com/2012/06/19/fluid-type/
+.marker {
+	color: red;
+	font-weight: bold;
+}
+
+/* Resize main content well to maintain optimal line length */
 body {
-	line-height: 1.5;
-	margin: 0 5%;
-}
+	margin: 0 auto;
+	width: 90%;
 
-h1 {
-	@include font-size( 26px );
-	padding-left: fixed-to-em(12px);
-	padding-right: fixed-to-rem(13px);
-	padding-bottom: fixed-to-percentage(14px);
-	padding: percentage( 10px 20em 30rem 40%, 10px );
-	margin: percentage( 20px 5px 30px, 26px );
-	
-}
+	@include breakpoint( beta ) {
+		width: 78%;
+	}
 
+	@include breakpoint( gamma ) {
+		width: 80%;
+	}
+
+	@include breakpoint( delta ) {
+		width: 60%;
+	}
+
+	@include breakpoint( epsilon ) {
+		width: 50%;
+	}
+
+	@include breakpoint( zeta ) {
+		width: 45%;
+	}
+
+	@include breakpoint( omega ) {
+		max-width: 660px;
+		width: 40%;
+	}
+}
 
 /* Min-width Tests */
 .mq {
-	z-index: 1;
+	@include transition( all 200ms ease-in-out );
 	
-	// This is just for testing. You would not normally use a media query for the smallest view.
+	// NOTE: You would not normally use a min-width media query for the smallest view.
 	@include breakpoint( alpha ) {
 		color: #D02929;
-		z-index: 479;
 	}
 	
 	@include breakpoint( beta ) {
 		color: #F98D24;
-		z-index: 480;
 	}
 	
 	@include breakpoint( gamma ) {
 		color: #F2C20C;
-		z-index: 568;
 	}
 	
 	@include breakpoint( delta ) {
 		color: #1DA71D;
-		z-index: 768;
 	}
 	
 	@include breakpoint( epsilon ) {
 		color: #1251BE;
-		z-index: 960;
 	}
 	
 	@include breakpoint( zeta ) {
 		color: #7411A6;
-		font-size: 56px;
-		z-index: 1024;
+	}
+
+	@include breakpoint( omega ) {
+		color: #555;
+		font-size: 64px;
 	}
 }
 
 /* Max-width Tests */
 .mq {
-	z-index: 1;
+	// NOTE: You would not normally use a max-width media query for the largest view.
+	@include max-breakpoint( omega ) {
+		font-size: 64px;
+	}
 	
-	// This is just for testing. You would not normally use a media query for the largest view.
 	@include max-breakpoint( zeta ) {
 		font-size: 56px;
-		z-index: 1024;
 	}
 	
 	@include max-breakpoint( epsilon ) {
 		font-size: 48px;
-		z-index: 960;
 	}
 	
 	@include max-breakpoint( delta ) {
 		font-size: 40px;
-		z-index: 768;
 	}
 	
 	@include max-breakpoint( gamma ) {
 		font-size: 32px;
-		z-index: 658;
 	}
 	
 	@include max-breakpoint( beta ) {
 		font-size: 24px;
-		z-index: 480;
 	}
 	
 	@include max-breakpoint( alpha ) {
 		font-size: 16px;
-		z-index: 479;
 	}
 }
 
 
+$col-gap: 20px;
+
+.row {
+	@extend .clearfix;
+	position: relative;
+	width: 100%;
+}
+
+.col {
+	@include box-shadow( inset 0 0 1px rgba(0, 0, 0, 0.8) );
+	@include box-sizing( border-box );
+	float: left;
+	padding: 0 $col-gap/2;
+	position: relative;
+}
+
+.col-50 {
+	width: 50%;
+}
+
+.col-25 {
+	width: 25%;
+}
+
+.col-33 {
+	width: 33.333333334%;
+}

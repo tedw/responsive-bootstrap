@@ -9,7 +9,9 @@
 /* ==========================================================================
    Utility Functions
    ========================================================================== */
-/* Convert any number of fixed values to relative units ( vals, context, units ) */
+/* Convert any number of fixed values to percentages ( vals, context ) */
+/* Convert any number of fixed values to ems ( vals, context ) */
+/* Convert any number of fixed values to rems ( vals, context ) */
 /* Set value as percentage */
 /* Set value as px */
 /* ==========================================================================
@@ -462,7 +464,31 @@ table {
    ========================================================================== */
 /* HTML5 Boilerplate Styles */
 /* Clearfix */
+.clearfix, .row {
+  *zoom: 1;
+}
+.clearfix:before, .row:before, .clearfix:after, .row:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after, .row:after {
+  clear: both;
+}
+
 /* Image replacement */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
 /* Hidden */
 .hidden {
   display: none !important;
@@ -502,14 +528,15 @@ table {
 /* ==========================================================================
    Base Styles
    ========================================================================== */
-/* Add breakpoint labels for JS purposes */
+/* Add breakpoint labels for JS purposes, set base font size */
 html {
   font-family: 'no-mq';
-  font-size: 87.5%;
+  font-size: 112.5%;
+  line-height: 1.6;
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Times New Roman", serif;
 }
 
 body:after {
@@ -517,156 +544,229 @@ body:after {
   display: none;
 }
 
-@media (max-width: em(479)) {
+@media (max-width: 29.9375em) {
   html {
     font-family: "alpha";
-    font-size: 75%;
+    font-size: 100%;
   }
 
   body:after {
     content: "alpha";
   }
 }
-@media (min-width: em(480)) and (max-width: em(567)) {
+@media (min-width: 30em) and (max-width: 39.9375em) {
   html {
     font-family: "beta";
-    font-size: 81.25%;
+    font-size: 106.25%;
   }
 
   body:after {
     content: "beta";
   }
 }
-@media (min-width: em(568)) and (max-width: em(767)) {
+@media (min-width: 40em) and (max-width: 47.9375em) {
   html {
     font-family: "gamma";
-    font-size: 87.5%;
+    font-size: 112.5%;
   }
 
   body:after {
     content: "gamma";
   }
 }
-@media (min-width: em(768)) and (max-width: em(959)) {
+@media (min-width: 48em) and (max-width: 59.9375em) {
   html {
     font-family: "delta";
-    font-size: 93.75%;
+    font-size: 112.5%;
   }
 
   body:after {
     content: "delta";
   }
 }
-@media (min-width: em(960)) and (max-width: em(1024)) {
+@media (min-width: 60em) and (max-width: 74.9375em) {
   html {
     font-family: "epsilon";
-    font-size: 100%;
+    font-size: 112.5%;
   }
 
   body:after {
     content: "epsilon";
   }
 }
-@media (min-width: em(1025)) {
+@media (min-width: 75em) and (max-width: 87.4375em) {
   html {
     font-family: "zeta";
-    font-size: 106.25%;
+    font-size: 118.75%;
   }
 
   body:after {
     content: "zeta";
   }
 }
-body {
-  line-height: 1.5;
-  margin: 0 5%;
+@media (min-width: 87.5em) {
+  html {
+    font-family: "omega";
+    font-size: 125%;
+  }
+
+  body:after {
+    content: "omega";
+  }
+}
+html {
+  -webkit-transition: font-size 100ms ease-in-out;
+  -moz-transition: font-size 100ms ease-in-out;
+  -ms-transition: font-size 100ms ease-in-out;
+  -o-transition: font-size 100ms ease-in-out;
+  transition: font-size 100ms ease-in-out;
 }
 
-h1 {
-  font-size: 26px;
-  font-size: 1.625rem;
-  padding-left: 0.75em;
-  padding-right: 0.8125rem;
-  padding-bottom: 87.5%;
-  padding: 100% 20em 30rem 40%;
-  margin: 76.92308% 19.23077% 115.38462%;
+/* Highlight the 45th and 75th characters to determime optimal line length */
+.marker {
+  color: red;
+  font-weight: bold;
+}
+
+/* Resize main content well to maintain optimal line length */
+body {
+  margin: 0 auto;
+  width: 90%;
+}
+@media only screen and (min-width: 30em) {
+  body {
+    width: 78%;
+  }
+}
+@media only screen and (min-width: 40em) {
+  body {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 48em) {
+  body {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 60em) {
+  body {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 75em) {
+  body {
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 87.5em) {
+  body {
+    max-width: 660px;
+    width: 40%;
+  }
 }
 
 /* Min-width Tests */
 .mq {
-  z-index: 1;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
   color: #D02929;
-  z-index: 479;
 }
-@media only screen and (min-width: em(480)) {
+@media only screen and (min-width: 30em) {
   .mq {
     color: #F98D24;
-    z-index: 480;
   }
 }
-@media only screen and (min-width: em(568)) {
+@media only screen and (min-width: 40em) {
   .mq {
     color: #F2C20C;
-    z-index: 568;
   }
 }
-@media only screen and (min-width: em(768)) {
+@media only screen and (min-width: 48em) {
   .mq {
     color: #1DA71D;
-    z-index: 768;
   }
 }
-@media only screen and (min-width: em(960)) {
+@media only screen and (min-width: 60em) {
   .mq {
     color: #1251BE;
-    z-index: 960;
   }
 }
-@media only screen and (min-width: em(1025)) {
+@media only screen and (min-width: 75em) {
   .mq {
     color: #7411A6;
-    font-size: 56px;
-    z-index: 1024;
+  }
+}
+@media only screen and (min-width: 87.5em) {
+  .mq {
+    color: #555;
+    font-size: 64px;
   }
 }
 
 /* Max-width Tests */
-.mq {
-  z-index: 1;
+@media only screen and (max-width: 87.5em) {
+  .mq {
+    font-size: 64px;
+  }
 }
-@media only screen and (max-width: em(1025)) {
+@media only screen and (max-width: 87.4375em) {
   .mq {
     font-size: 56px;
-    z-index: 1024;
   }
 }
-@media only screen and (max-width: em(1024)) {
+@media only screen and (max-width: 74.9375em) {
   .mq {
     font-size: 48px;
-    z-index: 960;
   }
 }
-@media only screen and (max-width: em(959)) {
+@media only screen and (max-width: 59.9375em) {
   .mq {
     font-size: 40px;
-    z-index: 768;
   }
 }
-@media only screen and (max-width: em(767)) {
+@media only screen and (max-width: 47.9375em) {
   .mq {
     font-size: 32px;
-    z-index: 658;
   }
 }
-@media only screen and (max-width: em(567)) {
+@media only screen and (max-width: 39.9375em) {
   .mq {
     font-size: 24px;
-    z-index: 480;
   }
 }
-@media only screen and (max-width: em(479)) {
+@media only screen and (max-width: 29.9375em) {
   .mq {
     font-size: 16px;
-    z-index: 479;
   }
+}
+
+.row {
+  position: relative;
+  width: 100%;
+}
+
+.col {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 10px;
+  position: relative;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-33 {
+  width: 33.333333334%;
 }
