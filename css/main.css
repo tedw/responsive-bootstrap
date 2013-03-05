@@ -7,15 +7,15 @@
 /* Image Path */
 /* Bourbon - http://bourbon.io/ */
 /* ==========================================================================
-   Custom Mixins and Functions
+   Utility Functions
    ========================================================================== */
-/* Strip Units */
-/* Set value as percent */
+/* Convert any number of fixed values to relative units ( vals, context, units ) */
+/* Set value as percentage */
 /* Set value as px */
-/* Convert px to relative untis */
-/* Convert px to em */
-/* Convert px to rem */
-/* Font Size */
+/* ==========================================================================
+   Utility Mixins
+   ========================================================================== */
+/* Generate font-size in rem with px fallback */
 /* Border Radius */
 /* Background Color Using RGBA */
 /* Background Clip */
@@ -23,9 +23,12 @@
 /* Background Image Text Clip (webkit-only) */
 /* High Resolution Background Image */
 /* Set image path if not previously defined */
+/* Code for Old IE */
+/* ==========================================================================
+   Responsive Mixins
+   ========================================================================== */
 /* Responsive Breakpoint Magic (breakpoint labels, bast font size) */
 /* Generate Media Queries */
-/* Code for Old IE */
 /* normalize.css v1.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    Base
@@ -514,7 +517,7 @@ body:after {
   display: none;
 }
 
-@media (max-width: 29.9375em) {
+@media (max-width: em(479)) {
   html {
     font-family: "alpha";
     font-size: 75%;
@@ -524,7 +527,7 @@ body:after {
     content: "alpha";
   }
 }
-@media (min-width: 30em) and (max-width: 35.4375em) {
+@media (min-width: em(480)) and (max-width: em(567)) {
   html {
     font-family: "beta";
     font-size: 81.25%;
@@ -534,7 +537,7 @@ body:after {
     content: "beta";
   }
 }
-@media (min-width: 35.5em) and (max-width: 47.9375em) {
+@media (min-width: em(568)) and (max-width: em(767)) {
   html {
     font-family: "gamma";
     font-size: 87.5%;
@@ -544,7 +547,7 @@ body:after {
     content: "gamma";
   }
 }
-@media (min-width: 48em) and (max-width: 59.9375em) {
+@media (min-width: em(768)) and (max-width: em(959)) {
   html {
     font-family: "delta";
     font-size: 93.75%;
@@ -554,7 +557,7 @@ body:after {
     content: "delta";
   }
 }
-@media (min-width: 60em) and (max-width: 64em) {
+@media (min-width: em(960)) and (max-width: em(1024)) {
   html {
     font-family: "epsilon";
     font-size: 100%;
@@ -564,7 +567,7 @@ body:after {
     content: "epsilon";
   }
 }
-@media (min-width: 64.0625em) {
+@media (min-width: em(1025)) {
   html {
     font-family: "zeta";
     font-size: 106.25%;
@@ -582,6 +585,11 @@ body {
 h1 {
   font-size: 26px;
   font-size: 1.625rem;
+  padding-left: 0.75em;
+  padding-right: 0.8125rem;
+  padding-bottom: 87.5%;
+  padding: 100% 20em 30rem 40%;
+  margin: 76.92308% 19.23077% 115.38462%;
 }
 
 /* Min-width Tests */
@@ -590,31 +598,31 @@ h1 {
   color: #D02929;
   z-index: 479;
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: em(480)) {
   .mq {
     color: #F98D24;
     z-index: 480;
   }
 }
-@media only screen and (min-width: 35.5em) {
+@media only screen and (min-width: em(568)) {
   .mq {
     color: #F2C20C;
     z-index: 568;
   }
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: em(768)) {
   .mq {
     color: #1DA71D;
     z-index: 768;
   }
 }
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: em(960)) {
   .mq {
     color: #1251BE;
     z-index: 960;
   }
 }
-@media only screen and (min-width: 64.0625em) {
+@media only screen and (min-width: em(1025)) {
   .mq {
     color: #7411A6;
     font-size: 56px;
@@ -626,37 +634,37 @@ h1 {
 .mq {
   z-index: 1;
 }
-@media only screen and (max-width: 64.0625em) {
+@media only screen and (max-width: em(1025)) {
   .mq {
     font-size: 56px;
     z-index: 1024;
   }
 }
-@media only screen and (max-width: 64em) {
+@media only screen and (max-width: em(1024)) {
   .mq {
     font-size: 48px;
     z-index: 960;
   }
 }
-@media only screen and (max-width: 59.9375em) {
+@media only screen and (max-width: em(959)) {
   .mq {
     font-size: 40px;
     z-index: 768;
   }
 }
-@media only screen and (max-width: 47.9375em) {
+@media only screen and (max-width: em(767)) {
   .mq {
     font-size: 32px;
     z-index: 658;
   }
 }
-@media only screen and (max-width: 35.4375em) {
+@media only screen and (max-width: em(567)) {
   .mq {
     font-size: 24px;
     z-index: 480;
   }
 }
-@media only screen and (max-width: 29.9375em) {
+@media only screen and (max-width: em(479)) {
   .mq {
     font-size: 16px;
     z-index: 479;

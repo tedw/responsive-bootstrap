@@ -14,6 +14,12 @@ body {
 
 h1 {
 	@include font-size( 26px );
+	padding-left: fixed-to-em(12px);
+	padding-right: fixed-to-rem(13px);
+	padding-bottom: fixed-to-percentage(14px);
+	padding: percentage( 10px 20em 30rem 40%, 10px );
+	margin: percentage( 20px 5px 30px, 26px );
+	
 }
 
 
