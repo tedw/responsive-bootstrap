@@ -102,7 +102,7 @@
 // Generate font-size in rem with px fallback
 @mixin font-size( $px ) {
 	font-size: px( $px );
-	font-size: fixed-to-rem( $px );
+	font-size: rem( $px );
 }
 
 // DEPRECIATED - Border Radius
