@@ -9,28 +9,17 @@
 /* ==========================================================================
    Utility Functions
    ========================================================================== */
-/* Convert any number of fixed values to percentages ( vals, context ) */
-/* Convert any number of fixed values to ems ( vals, context ) */
-/* Convert any number of fixed values to rems ( vals, context ) */
-/* Set value as percentage */
-/* Set value as px */
+/* Unit Calculations */
+/* Colors */
 /* ==========================================================================
    Utility Mixins
    ========================================================================== */
-/* Generate font-size in rem with px fallback */
-/* Border Radius */
-/* Background Color Using RGBA */
-/* Background Clip */
-/* useful if you don't want a bg color from leaking outside the border */
-/* Background Image Text Clip (webkit-only) */
-/* High Resolution Background Image */
 /* Set image path if not previously defined */
-/* Code for Old IE */
 /* ==========================================================================
    Responsive Mixins
    ========================================================================== */
-/* Responsive Breakpoint Magic (breakpoint labels, bast font size) */
-/* Generate Media Queries */
+/* Responsive Breakpoint Magic (breakpoint labels, base font size) */
+/* Media Queries */
 /* normalize.css v1.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    Base
@@ -749,7 +738,6 @@ body {
 }
 
 .col {
-  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

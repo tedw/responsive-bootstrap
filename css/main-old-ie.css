@@ -10,28 +10,17 @@
 /* ==========================================================================
    Utility Functions
    ========================================================================== */
-/* Convert any number of fixed values to percentages ( vals, context ) */
-/* Convert any number of fixed values to ems ( vals, context ) */
-/* Convert any number of fixed values to rems ( vals, context ) */
-/* Set value as percentage */
-/* Set value as px */
+/* Unit Calculations */
+/* Colors */
 /* ==========================================================================
    Utility Mixins
    ========================================================================== */
-/* Generate font-size in rem with px fallback */
-/* Border Radius */
-/* Background Color Using RGBA */
-/* Background Clip */
-/* useful if you don't want a bg color from leaking outside the border */
-/* Background Image Text Clip (webkit-only) */
-/* High Resolution Background Image */
 /* Set image path if not previously defined */
-/* Code for Old IE */
 /* ==========================================================================
    Responsive Mixins
    ========================================================================== */
-/* Responsive Breakpoint Magic (breakpoint labels, bast font size) */
-/* Generate Media Queries */
+/* Responsive Breakpoint Magic (breakpoint labels, base font size) */
+/* Media Queries */
 /* normalize.css v1.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    Base
@@ -584,104 +573,104 @@ table {
    Base Styles
    ========================================================================== */
 /* Add breakpoint labels for JS purposes, set base font size */
-/* line 269, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 202, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 html {
   font-family: 'no-mq';
   font-size: 112.5%;
   line-height: 1.6;
 }
 
-/* line 276, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 209, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body {
   font-family: "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Times New Roman", serif;
 }
 
-/* line 279, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+/* line 212, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body:after {
   content: 'no-mq';
   display: none;
 }
 
 @media (max-width: 29.9375em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "alpha";
     font-size: 100%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "alpha";
   }
 }
 @media (min-width: 30em) and (max-width: 39.9375em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "beta";
     font-size: 106.25%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "beta";
   }
 }
 @media (min-width: 40em) and (max-width: 47.9375em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "gamma";
     font-size: 112.5%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "gamma";
   }
 }
 @media (min-width: 48em) and (max-width: 59.9375em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "delta";
     font-size: 112.5%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "delta";
   }
 }
 @media (min-width: 60em) and (max-width: 74.9375em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "epsilon";
     font-size: 112.5%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "epsilon";
   }
 }
 @media (min-width: 75em) and (max-width: 87.4375em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "zeta";
     font-size: 118.75%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "zeta";
   }
 }
 @media (min-width: 87.5em) {
-  /* line 324, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "omega";
     font-size: 125%;
   }
 
-  /* line 330, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
+  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "omega";
   }
@@ -703,43 +692,43 @@ html {
 }
 
 /* Resize main content well to maintain optimal line length */
-/* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 body {
   margin: 0 auto;
   width: 90%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 78%;
   }
 }
 @media only screen and (min-width: 40em) {
-  /* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 80%;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 60%;
   }
 }
 @media only screen and (min-width: 60em) {
-  /* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 50%;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 45%;
   }
 }
 @media only screen and (min-width: 87.5em) {
-  /* line 24, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     max-width: 660px;
     width: 40%;
@@ -747,7 +736,7 @@ body {
 }
 
 /* Min-width Tests */
-/* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .mq {
   -webkit-transition: all 200ms ease-in-out;
   -moz-transition: all 200ms ease-in-out;
@@ -757,37 +746,37 @@ body {
   color: #D02929;
 }
 @media only screen and (min-width: 30em) {
-  /* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #F98D24;
   }
 }
 @media only screen and (min-width: 40em) {
-  /* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #F2C20C;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #1DA71D;
   }
 }
 @media only screen and (min-width: 60em) {
-  /* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #1251BE;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #7411A6;
   }
 }
 @media only screen and (min-width: 87.5em) {
-  /* line 55, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #555;
     font-size: 64px;
@@ -796,57 +785,56 @@ body {
 
 /* Max-width Tests */
 @media only screen and (max-width: 87.5em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 64px;
   }
 }
 @media only screen and (max-width: 87.4375em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 56px;
   }
 }
 @media only screen and (max-width: 74.9375em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 48px;
   }
 }
 @media only screen and (max-width: 59.9375em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 40px;
   }
 }
 @media only screen and (max-width: 47.9375em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 32px;
   }
 }
 @media only screen and (max-width: 39.9375em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 24px;
   }
 }
 @media only screen and (max-width: 29.9375em) {
-  /* line 90, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 16px;
   }
 }
 
-/* line 124, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 125, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .row {
   position: relative;
   width: 100%;
 }
 
-/* line 130, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 131, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col {
-  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -856,17 +844,17 @@ body {
   position: relative;
 }
 
-/* line 138, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col-50 {
   width: 50%;
 }
 
-/* line 142, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 143, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col-25 {
   width: 25%;
 }
 
-/* line 146, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
+/* line 147, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col-33 {
   width: 33.333333334%;
 }
