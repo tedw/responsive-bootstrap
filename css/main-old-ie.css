@@ -31,7 +31,6 @@
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 14, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 html {
   font-size: 100%;
   /* 1 */
@@ -45,7 +44,6 @@ html {
  * Addresses `font-family` inconsistency between `textarea` and other form
  * elements.
  */
-/* line 28, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 button,
 input,
 select,
@@ -56,7 +54,6 @@ textarea {
 /*
  * Addresses margins handled incorrectly in IE 6/7.
  */
-/* line 36, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 body {
   margin: 0;
 }
@@ -67,7 +64,6 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-/* line 48, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -75,7 +71,6 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-/* line 57, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -89,37 +84,31 @@ a:hover {
  * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
  * and Chrome.
  */
-/* line 71, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* line 76, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
-/* line 81, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
-/* line 86, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
-/* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
 }
 
-/* line 96, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
@@ -128,7 +117,6 @@ h6 {
 /*
  * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
  */
-/* line 105, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -136,13 +124,11 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
  */
-/* line 114, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 118, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 blockquote {
   margin: 1em 40px;
 }
@@ -150,7 +136,6 @@ blockquote {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-/* line 126, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 dfn {
   font-style: italic;
 }
@@ -158,7 +143,6 @@ dfn {
 /*
  * Addresses styling not present in IE 6/7/8/9.
  */
-/* line 134, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -167,7 +151,6 @@ mark {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-/* line 144, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 p,
 pre {
   margin: 1em 0;
@@ -176,7 +159,6 @@ pre {
 /*
  * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
  */
-/* line 155, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 code,
 kbd,
 pre,
@@ -189,7 +171,6 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-/* line 165, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -199,7 +180,6 @@ pre {
 /*
  * Addresses CSS quotes not supported in IE 6/7.
  */
-/* line 175, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 q {
   quotes: none;
 }
@@ -207,7 +187,6 @@ q {
 /*
  * Addresses `quotes` property not supported in Safari 4.
  */
-/* line 184, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 q:before,
 q:after {
   content: '';
@@ -217,7 +196,6 @@ q:after {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-/* line 193, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 small {
   font-size: 80%;
 }
@@ -225,7 +203,6 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 202, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -234,12 +211,10 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 209, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 213, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -250,7 +225,6 @@ sub {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-/* line 228, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 dl,
 menu,
 ol,
@@ -258,7 +232,6 @@ ul {
   margin: 1em 0;
 }
 
-/* line 232, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 dd {
   margin: 0 0 0 40px;
 }
@@ -266,7 +239,6 @@ dd {
 /*
  * Addresses paddings set differently in IE 6/7.
  */
-/* line 242, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 menu,
 ol,
 ul {
@@ -276,7 +248,6 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE 7.
  */
-/* line 251, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 nav ul,
 nav ol {
   list-style: none;
@@ -290,7 +261,6 @@ nav ol {
  * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
  * 2. Improves image quality when scaled in IE 7.
  */
-/* line 265, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 img {
   border: 0;
   /* 1 */
@@ -301,7 +271,6 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-/* line 274, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -312,7 +281,6 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
  */
-/* line 286, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 figure {
   margin: 0;
 }
@@ -323,7 +291,6 @@ figure {
 /*
  * Corrects margin displayed oddly in IE 6/7.
  */
-/* line 298, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 form {
   margin: 0;
 }
@@ -331,7 +298,6 @@ form {
 /*
  * Define consistent border, margin, and padding.
  */
-/* line 306, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
@@ -343,7 +309,6 @@ fieldset {
  * 2. Corrects text not wrapping in Firefox 3.
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
-/* line 318, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -360,7 +325,6 @@ legend {
  *    and Chrome.
  * 3. Improves appearance and consistency in all browsers.
  */
-/* line 335, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 button,
 input,
 select,
@@ -379,7 +343,6 @@ textarea {
  * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 348, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -394,7 +357,6 @@ input {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-/* line 365, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 button,
 input[type="button"],
 input[type="reset"],
@@ -410,7 +372,6 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-/* line 376, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -422,7 +383,6 @@ input[disabled] {
  * 3. Removes excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-/* line 388, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -440,7 +400,6 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 401, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -454,7 +413,6 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 414, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -463,7 +421,6 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-/* line 423, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -474,7 +431,6 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 6/7/8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-/* line 433, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -488,7 +444,6 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-/* line 446, /Users/twhitehead/Sites/responsive-bootstrap/css/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -499,29 +454,24 @@ table {
    ========================================================================== */
 /* HTML5 Boilerplate Styles */
 /* Clearfix */
-/* line 8, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .clearfix, .row {
   *zoom: 1;
 }
-/* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .clearfix:before, .row:before, .clearfix:after, .row:after {
   content: " ";
   display: table;
 }
-/* line 11, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .clearfix:after, .row:after {
   clear: both;
 }
 
 /* Image replacement */
-/* line 15, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .ir {
   background-color: transparent;
   border: 0;
   overflow: hidden;
   *text-indent: -9999px;
 }
-/* line 21, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .ir:before {
   content: "";
   display: block;
@@ -530,14 +480,12 @@ table {
 }
 
 /* Hidden */
-/* line 30, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-/* line 36, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -548,7 +496,6 @@ table {
   position: absolute;
   width: 1px;
 }
-/* line 46, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
@@ -564,7 +511,6 @@ table {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 64, /Users/twhitehead/Sites/responsive-bootstrap/css/_helpers.scss */
 .invisible {
   visibility: hidden;
 }
@@ -573,109 +519,91 @@ table {
    Base Styles
    ========================================================================== */
 /* Add breakpoint labels for JS purposes, set base font size */
-/* line 202, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 html {
   font-family: 'no-mq';
   font-size: 112.5%;
   line-height: 1.6;
 }
 
-/* line 209, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body {
   font-family: "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "Times New Roman", serif;
 }
 
-/* line 212, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
 body:after {
   content: 'no-mq';
   display: none;
 }
 
 @media (max-width: 29.9375em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "alpha";
     font-size: 100%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "alpha";
   }
 }
 @media (min-width: 30em) and (max-width: 39.9375em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "beta";
     font-size: 106.25%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "beta";
   }
 }
 @media (min-width: 40em) and (max-width: 47.9375em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "gamma";
     font-size: 112.5%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "gamma";
   }
 }
 @media (min-width: 48em) and (max-width: 59.9375em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "delta";
     font-size: 112.5%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "delta";
   }
 }
 @media (min-width: 60em) and (max-width: 74.9375em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "epsilon";
     font-size: 112.5%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "epsilon";
   }
 }
 @media (min-width: 75em) and (max-width: 87.4375em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "zeta";
     font-size: 118.75%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "zeta";
   }
 }
 @media (min-width: 87.5em) {
-  /* line 256, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   html {
     font-family: "omega";
     font-size: 125%;
   }
 
-  /* line 262, /Users/twhitehead/Sites/responsive-bootstrap/css/_mixins.scss */
   body:after {
     content: "omega";
   }
 }
-/* line 10, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 html {
   -webkit-transition: font-size 100ms ease-in-out;
   -moz-transition: font-size 100ms ease-in-out;
@@ -685,50 +613,42 @@ html {
 }
 
 /* Highlight the 45th and 75th characters to determime optimal line length */
-/* line 18, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .marker {
   color: red;
   font-weight: bold;
 }
 
 /* Resize main content well to maintain optimal line length */
-/* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 body {
   margin: 0 auto;
   width: 90%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 78%;
   }
 }
 @media only screen and (min-width: 40em) {
-  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 80%;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 60%;
   }
 }
 @media only screen and (min-width: 60em) {
-  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 50%;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     width: 45%;
   }
 }
 @media only screen and (min-width: 87.5em) {
-  /* line 25, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   body {
     max-width: 660px;
     width: 40%;
@@ -736,7 +656,6 @@ body {
 }
 
 /* Min-width Tests */
-/* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .mq {
   -webkit-transition: all 200ms ease-in-out;
   -moz-transition: all 200ms ease-in-out;
@@ -746,37 +665,31 @@ body {
   color: #D02929;
 }
 @media only screen and (min-width: 30em) {
-  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #F98D24;
   }
 }
 @media only screen and (min-width: 40em) {
-  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #F2C20C;
   }
 }
 @media only screen and (min-width: 48em) {
-  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #1DA71D;
   }
 }
 @media only screen and (min-width: 60em) {
-  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #1251BE;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #7411A6;
   }
 }
 @media only screen and (min-width: 87.5em) {
-  /* line 56, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     color: #555;
     font-size: 64px;
@@ -785,55 +698,46 @@ body {
 
 /* Max-width Tests */
 @media only screen and (max-width: 87.5em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 64px;
   }
 }
 @media only screen and (max-width: 87.4375em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 56px;
   }
 }
 @media only screen and (max-width: 74.9375em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 48px;
   }
 }
 @media only screen and (max-width: 59.9375em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 40px;
   }
 }
 @media only screen and (max-width: 47.9375em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 32px;
   }
 }
 @media only screen and (max-width: 39.9375em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 24px;
   }
 }
 @media only screen and (max-width: 29.9375em) {
-  /* line 91, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
   .mq {
     font-size: 16px;
   }
 }
 
-/* line 125, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .row {
   position: relative;
   width: 100%;
 }
 
-/* line 131, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col {
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
   -webkit-box-sizing: border-box;
@@ -844,17 +748,14 @@ body {
   position: relative;
 }
 
-/* line 139, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col-50 {
   width: 50%;
 }
 
-/* line 143, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col-25 {
   width: 25%;
 }
 
-/* line 147, /Users/twhitehead/Sites/responsive-bootstrap/css/_base.scss */
 .col-33 {
   width: 33.333333334%;
 }
