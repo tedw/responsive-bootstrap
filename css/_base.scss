@@ -12,6 +12,23 @@ html {
 }
 
 
+/* TEST COLOR FUNCTIONS */
+$old-ie: false;
+
+.col-50 {
+	background-color: color-alpha( #f00, 0.5 );
+}
+
+.col-33 {
+	background-color: color-alpha( rgba(0,0,255,0.5), #FF7F7F );
+}
+
+.row:nth-of-type(2) {
+	position: relative;
+	top: -20px;
+}
+
+
 /* Highlight the 45th and 75th characters to determime optimal line length */
 // http://www.webtypography.net/Rhythm_and_Proportion/Horizontal_Motion/2.1.2/
 // http://trentwalton.com/2012/06/19/fluid-type/
@@ -19,7 +36,6 @@ html {
 	color: red;
 	font-weight: bold;
 }
-
 
 /* Resize main content well to maintain optimal line length */
 body {
