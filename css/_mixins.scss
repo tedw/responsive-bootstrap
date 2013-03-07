@@ -5,7 +5,7 @@
 /* Unit Calculations */
 
 // Strip Units
-// http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass
+// Reference: http://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass
 @function clean( $val ) {
 	@return $val / ($val * 0 + 1);
 }
@@ -158,19 +158,6 @@
 	}
 }
 
-// DEPRECIATED - Border Radius
-// @mixin border-radius( $radius ) {
-// -webkit-border-radius: $radius; // Safari 3-4, iOS 1-3.2, Android <=1.6
-// 			border-radius: $radius; // Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+
-// }
-
-// DEPRECIATED - Background Color Using RGBA
-// Can just use the rgba function instead
-// @mixin background-rgba( $color, $opacity ) {
-// 	background-color: $color;
-// 	background-color: rgba($color, $opacity);
-// }
-
 // Background Clip
 // useful if you don't want a bg color from leaking outside the border
 @mixin background-clip() {
@@ -190,16 +177,6 @@
 	-webkit-background-clip: text;
 }
 
-// DEPRECIATED - High Resolution Media Query
-// Use Bourbon mixin http://bourbon.io/docs/#hidpi-media-query
-// Usage: @include hidpi(1.5)
-//
-// @mixin hires-mq( $ratio ) {
-// 	@media only screen and (-webkit-min-device-pixel-ratio: $ratio), only screen and (min-resolution: ($ratio * 96) + 'dpi') {
-// 		@content;
-// 	}
-// }
-
 // High Resolution Background Image
 $img-path: '../img/' !default; /* Set image path if not previously defined */
 
@@ -215,15 +192,47 @@ $img-path: '../img/' !default; /* Set image path if not previously defined */
 	}
 }
 
-
-// Code for old IE
+// Set old IE flag if not already defined
 $old-ie: false !default;
 
+// Render code in old IE only
 @mixin old-ie {
 	@if $old-ie {
 		@content;
 	}
 }
+
+// Do not render code in old IE
+@mixin not-old-ie {
+	@if not $old-ie {
+		@content;
+	}
+}
+
+
+// DEPRECIATED - Border Radius
+// Unnecessary unless supporting certain old browsers http://caniuse.com/border-radius
+// @mixin border-radius( $radius ) {
+// -webkit-border-radius: $radius; // Safari 3-4, iOS 1-3.2, Android <=1.6
+// 			border-radius: $radius; // Opera 10.5, IE9+, Safari 5, Chrome, Firefox 4+, iOS 4, Android 2.1+
+// }
+
+// DEPRECIATED - Background Color Using RGBA
+// Can just use the color-alpha() function instead
+// @mixin background-rgba( $color, $opacity ) {
+// 	background-color: $color;
+// 	background-color: rgba($color, $opacity);
+// }
+
+// DEPRECIATED - High Resolution Media Query
+// Use Bourbon mixin http://bourbon.io/docs/#hidpi-media-query
+// Usage: @include hidpi(1.5)
+//
+// @mixin hires-mq( $ratio ) {
+// 	@media only screen and (-webkit-min-device-pixel-ratio: $ratio), only screen and (min-resolution: ($ratio * 96) + 'dpi') {
+// 		@content;
+// 	}
+// }
 
 
 /* ==========================================================================

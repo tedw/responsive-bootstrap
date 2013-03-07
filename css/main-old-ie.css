@@ -612,20 +612,6 @@ html {
   transition: font-size 100ms ease-in-out;
 }
 
-/* TEST COLOR FUNCTIONS */
-.col-50 {
-  background-color: rgba(255, 0, 0, 0.5);
-}
-
-.col-33 {
-  background-color: rgba(0, 0, 255, 0.5);
-}
-
-.row:nth-of-type(2) {
-  position: relative;
-  top: -20px;
-}
-
 /* Highlight the 45th and 75th characters to determime optimal line length */
 .marker {
   color: red;
