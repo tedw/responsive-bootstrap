@@ -61,7 +61,7 @@
 // Set value as percentage
 @function percentage( $val ) {
 	// Return value if already a pecentage
-	@if unit( $val ) == '%' {
+	@if $val == 0 or unit( $val ) == '%' {
 		@return $val;
 	}
 	// Otherwise, strip units and convert to percentage
@@ -71,7 +71,7 @@
 // Set value as px
 @function px( $val ) {
 	// Return value if already in pixels
-	@if unit( $val ) == 'px' {
+	@if $val == 0 or unit( $val ) == 'px' {
 		@return $val;
 	}
 	// Otherwise, strip units and convert to px
