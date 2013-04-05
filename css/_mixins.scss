@@ -426,7 +426,7 @@ $break-count: length($breakpoints);
 // Var already defined above
 // $fixed-width: false !default;
 
-// Min-width
+// Min-width using named breakpoints in $breakpoints array
 @mixin breakpoint( $name ) {
 	$index: 1; // Create index var to use in @each loop
 
@@ -457,7 +457,7 @@ $break-count: length($breakpoints);
 	}
 }
 
-// Max-width
+// Max-width using named breakpoints in $breakpoints array
 @mixin max-breakpoint( $name ) {
 	$index: 1; // Create index var to use in @each loop
 
@@ -496,5 +496,20 @@ $break-count: length($breakpoints);
 		
 		// Increment counter
 		$index: $index + 1;
+	}
+}
+
+
+// General purpose media query mixin
+// Inspired by http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+@mixin mq( $size, $type: min, $dimension: width ) {
+	// Output plain styles for fixed width stylesheets when applicable
+	@if $fixed-width and $size <= $fixed-width {
+		@content;
+	}
+	@else {
+		@media screen and ( #{$type}-#{$dimension}: #{em($size)} ) {
+			@content;
+		}
 	}
 }
