@@ -622,37 +622,10 @@ html {
 body {
   margin: 0 auto;
   width: 90%;
-}
-@media only screen and (min-width: 30em) {
-  body {
-    width: 78%;
-  }
-}
-@media only screen and (min-width: 40em) {
-  body {
-    width: 80%;
-  }
-}
-@media only screen and (min-width: 48em) {
-  body {
-    width: 60%;
-  }
-}
-@media only screen and (min-width: 60em) {
-  body {
-    width: 50%;
-  }
-}
-@media only screen and (min-width: 75em) {
-  body {
-    width: 45%;
-  }
-}
-@media only screen and (min-width: 87.5em) {
-  body {
-    max-width: 660px;
-    width: 40%;
-  }
+  width: 78%;
+  width: 80%;
+  width: 60%;
+  width: 50%;
 }
 
 /* Min-width Tests */
@@ -663,74 +636,17 @@ body {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   color: #D02929;
-}
-@media only screen and (min-width: 30em) {
-  .mq {
-    color: #F98D24;
-  }
-}
-@media only screen and (min-width: 40em) {
-  .mq {
-    color: #F2C20C;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .mq {
-    color: #1DA71D;
-  }
-}
-@media only screen and (min-width: 60em) {
-  .mq {
-    color: #1251BE;
-  }
-}
-@media only screen and (min-width: 75em) {
-  .mq {
-    color: #7411A6;
-  }
-}
-@media only screen and (min-width: 87.5em) {
-  .mq {
-    color: #555;
-    font-size: 64px;
-  }
+  color: #F98D24;
+  color: #F2C20C;
+  color: #1DA71D;
+  color: #1251BE;
 }
 
 /* Max-width Tests */
-@media only screen and (max-width: 87.5em) {
-  .mq {
-    font-size: 64px;
-  }
-}
-@media only screen and (max-width: 87.4375em) {
-  .mq {
-    font-size: 56px;
-  }
-}
-@media only screen and (max-width: 74.9375em) {
-  .mq {
-    font-size: 48px;
-  }
-}
-@media only screen and (max-width: 59.9375em) {
-  .mq {
-    font-size: 40px;
-  }
-}
-@media only screen and (max-width: 47.9375em) {
-  .mq {
-    font-size: 32px;
-  }
-}
-@media only screen and (max-width: 39.9375em) {
-  .mq {
-    font-size: 24px;
-  }
-}
-@media only screen and (max-width: 29.9375em) {
-  .mq {
-    font-size: 16px;
-  }
+.mq {
+  font-size: 64px;
+  font-size: 56px;
+  font-size: 48px;
 }
 
 .row {
