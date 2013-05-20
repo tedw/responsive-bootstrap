@@ -284,27 +284,63 @@ $img-path: '../img/' !default; /* Set image path if not previously defined */
 // NOTE: Must set an opaque background color on target element
 // Reference: http://www.readitsideways.com/css3_demos/shadows/
 @mixin corner-lift( $color: rgba(0, 0, 0, 0.2), $angle: 3deg, $bottom-offset: 14px ) {
-    $height: 40px; // Default max height shadow can be
-    position: relative;
-    &:before,
-    &:after {
-        bottom: 22px - $bottom-offset;
-        content: '\0020';
-        height: $height;
-        max-width: 50%;
-        position: absolute;
-        width: 50%;
-        z-index: -1;
-        @include box-shadow( 0 15px 5px $color );
-    }
-    &:before {
-        @include transform( skew( -4deg, -$angle ) );
-        left: 1px;
-    }
-    &:after {
-        @include transform( skew( 4deg, $angle ) );
-        right: 1px;
-    }
+	$height: 40px; // Default max height shadow can be
+	position: relative;
+	&:before,
+	&:after {
+		bottom: 22px - $bottom-offset;
+		content: '\0020';
+		height: $height;
+		max-width: 50%;
+		position: absolute;
+		width: 50%;
+		z-index: -1;
+		@include box-shadow( 0 15px 5px $color );
+	}
+	&:before {
+		@include transform( skew( -4deg, -$angle ) );
+		left: 1px;
+	}
+	&:after {
+		@include transform( skew( 4deg, $angle ) );
+		right: 1px;
+	}
+}
+
+
+// Sass Triangle Mixin
+// Source: http://minimalmonkey.com/sass-triangle-mixin/
+@mixin arrows( $width: 20px, $height: 20px, $direction: up, $color: white ) {
+	height: 0;
+	width: 0;
+    
+	// Right
+	@if ( $direction == right ) {
+		border-top: $height/2 solid transparent;
+		border-bottom: $height/2 solid transparent;
+		border-left: $width solid $color;
+	}
+
+	// Left
+	@if ( $direction == left ) {
+		border-top: $height/2 solid transparent;
+		border-bottom: $height/2 solid transparent;
+		border-right: $width solid $color;
+	}
+
+	// Up
+	@if ( $direction == up ) {
+		border-left: $width/2 solid transparent;
+		border-right: $width/2 solid transparent;
+		border-bottom: $height solid $color;
+	}
+
+	// Down
+	@if ( $direction == down ) {
+		border-left: $width/2 solid transparent;
+		border-right: $width/2 solid transparent;
+		border-top: $height solid $color;
+	}
 }
 
 
