@@ -163,7 +163,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
@@ -298,7 +298,7 @@ form {
  * Define consistent border, margin, and padding.
  */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -606,8 +606,6 @@ body:after {
 html {
   -webkit-transition: font-size 100ms ease-in-out;
   -moz-transition: font-size 100ms ease-in-out;
-  -ms-transition: font-size 100ms ease-in-out;
-  -o-transition: font-size 100ms ease-in-out;
   transition: font-size 100ms ease-in-out;
 }
 
@@ -658,8 +656,6 @@ body {
 .mq {
   -webkit-transition: all 200ms ease-in-out;
   -moz-transition: all 200ms ease-in-out;
-  -ms-transition: all 200ms ease-in-out;
-  -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   color: #D02929;
 }
