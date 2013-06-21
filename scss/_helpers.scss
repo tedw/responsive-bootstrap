@@ -65,3 +65,10 @@
     visibility: hidden;
 }
 
+/* Scale images proportionally */
+// http://www.456bereastreet.com/archive/201306/how_to_proportionally_scale_images_that_have_dimension_attributes/
+img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}

@@ -453,14 +453,14 @@ table {
    ========================================================================== */
 /* HTML5 Boilerplate Styles */
 /* Clearfix */
-.clearfix, .row {
+.clearfix {
   *zoom: 1;
 }
-.clearfix:before, .row:before, .clearfix:after, .row:after {
+.clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
-.clearfix:after, .row:after {
+.clearfix:after {
   clear: both;
 }
 
@@ -512,6 +512,13 @@ table {
  */
 .invisible {
   visibility: hidden;
+}
+
+/* Scale images proportionally */
+img {
+  height: auto;
+  max-width: 100%;
+  width: auto;
 }
 
 /* ==========================================================================
@@ -728,29 +735,136 @@ body {
   }
 }
 
-.row {
-  position: relative;
-  width: 100%;
-}
-
+/* Grid */
 .col {
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.8);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  *zoom: 1;
   float: left;
-  padding: 0 10px;
-  position: relative;
+}
+.col:before, .col:after {
+  content: " ";
+  display: table;
+}
+.col:after {
+  clear: both;
+}
+.col:last-child {
+  float: right;
+  margin-right: 0;
 }
 
-.col-50 {
-  width: 50%;
+.row {
+  *zoom: 1;
+  clear: both;
+}
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
 }
 
-.col-25 {
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-3 {
   width: 25%;
 }
 
-.col-33 {
-  width: 33.333333334%;
+.col-4 {
+  width: 33.33333%;
+}
+
+.col-5 {
+  width: 41.66667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33333%;
+}
+
+.col-8 {
+  width: 66.66667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.push-1 {
+  margin-left: 8.33333%;
+}
+
+.push-2 {
+  margin-left: 16.66667%;
+}
+
+.push-3 {
+  margin-left: 25%;
+}
+
+.push-4 {
+  margin-left: 33.33333%;
+}
+
+.push-5 {
+  margin-left: 41.66667%;
+}
+
+.push-6 {
+  margin-left: 50%;
+}
+
+.push-7 {
+  margin-left: 58.33333%;
+}
+
+.push-8 {
+  margin-left: 66.66667%;
+}
+
+.push-9 {
+  margin-left: 75%;
+}
+
+.push-10 {
+  margin-left: 83.33333%;
+}
+
+.push-11 {
+  margin-left: 91.66667%;
+}
+
+.push-12 {
+  margin-left: 100%;
+}
+
+/* DEMO STYLES */
+.col {
+  background: #e0e0e0;
+  text-align: center;
+}
+.col:nth-child(2n+1) {
+  background: #f0f0f0;
 }

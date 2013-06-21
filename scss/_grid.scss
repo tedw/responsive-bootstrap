@@ -1,0 +1,48 @@
+/* Grid */
+$row-width: 960px;
+$col-width: 60px;
+$gutter: 20px;
+$columns: 12;
+
+.col {
+    @include clearfix;
+    float: left;
+    
+    // Avoid rounding errors in some browsers
+    &:last-child {
+        float: right;
+        margin-right: 0;
+    }
+}
+
+.row {
+    @include clearfix;
+    clear: both;
+}
+
+// Generate column widths
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        //$total-gutter: (($columns / $i) - 1) * $gutter;
+        //margin-right: percent( $total-gutter, $row-width );
+        width: percent( $row-width / ($columns / $i), $row-width );
+    }
+}
+
+// Generate push widths
+@for $i from 1 through $columns {
+    .push-#{$i} {
+        margin-left: percent( $i * ($col-width + $gutter), $row-width );
+    }
+}
+
+
+/* DEMO STYLES */
+.col {
+    background: #e0e0e0;
+    text-align: center;
+    
+    &:nth-child(2n+1) {
+        background: #f0f0f0;
+    }
+}

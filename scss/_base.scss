@@ -117,32 +117,3 @@ body {
 		font-size: 16px;
 	}
 }
-
-
-$col-gap: 20px;
-
-.row {
-	@extend .clearfix;
-	position: relative;
-	width: 100%;
-}
-
-.col {
-	@include box-shadow( inset 0 0 1px rgba(0, 0, 0, 0.8) );
-	@include box-sizing( border-box );
-	float: left;
-	padding: 0 $col-gap/2;
-	position: relative;
-}
-
-.col-50 {
-	width: 50%;
-}
-
-.col-25 {
-	width: 25%;
-}
-
-.col-33 {
-	width: 33.333333334%;
-}
