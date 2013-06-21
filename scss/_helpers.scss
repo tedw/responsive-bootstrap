@@ -2,6 +2,15 @@
    Custom Helper Styles
    ========================================================================== */
 
+.no-js .no-js {
+    display: block;
+}
+
+.js .no-js {
+    display: none;
+}
+
+
 /* HTML5 Boilerplate Styles */
 
 /* Clearfix */
@@ -9,6 +18,21 @@
 	*zoom: 1;
 	&:before, &:after { content: " "; display: table; }
 	&:after { clear: both; }
+}
+
+// Include the mixin to avoid huge selectors in generated CSS
+@mixin clearfix() {
+    @if $old-ie {
+        *zoom: 1; // IE6/7 needs this to trigger hasLayout
+    }
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }
 
 /* Image replacement */
@@ -25,6 +49,22 @@
 		height: 150%;
 	}
 }
+
+// Include the mixin to avoid huge selectors in generated CSS
+@mixin imageReplace() {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	// IE 6/7 fallback
+	*text-indent: -9999px;
+	&:before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 150%;
+	}
+}
+
 
 /* Hidden */
 .hidden {
@@ -71,4 +111,98 @@ img {
     height: auto;
     max-width: 100%;
     width: auto;
+}
+
+
+/* 
+    Media List Styles (image next to text)
+
+    Based on work by:
+    Nicole Sullivan http://goo.gl/5GrKJ
+    Nicolas Gallagher http://jsfiddle.net/necolas/rZvEF/
+*/
+.imgblock {
+    @include clearfix;
+
+    > li {
+        @include clearfix;
+    }
+    .img {
+        float: left;
+        margin: 0 10px 10px 0; /* Set some default margin */
+        img {
+            display: block;
+        }
+    }
+    .content {
+        /*
+         * 1. Create new block formatting context in modern browsers
+         * 2. Avoid shrink-wrap behaviour of table-cell
+         * 3. Override for IE6/7
+         * 4. Create new block formatting context in IE6/7
+         * Alternatively, use 'overflow:hidden' if clipping is OK
+        */
+        display: table-cell; /* 1 */
+        width: 10000px; /* 2 */
+        @include old-ie() {
+            *width: auto; /* 3 */
+            *zoom: 1; /* 4 */
+        }
+    }
+}
+
+// Include the mixin to avoid huge selectors in generated CSS
+@mixin imgblock() {
+    @include clearfix;
+
+    > li {
+        @include clearfix;
+    }
+    .img {
+        float: left;
+        margin: 0 10px 10px 0; /* Default margin */
+        img {
+            display: block;
+        }
+    }
+    .content {
+        display: table-cell;
+        width: 10000px;
+        @include old-ie() {
+            *width: auto;
+            *zoom: 1;
+        }
+    }
+}
+
+
+/* Reset form elements */
+%reset-input {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    
+    /**
+     * Remove inner padding and border in Firefox 4+.
+     */
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+%reset-button {
+    @extend %reset-input;
+    -webkit-appearance: button;
+    cursor: pointer;
+    line-height: normal;
+}
+
+%reset-textarea {
+    border: none;
+    outline: none;
+    overflow: auto;
+    resize: none;
+    vertical-align: top;
 }

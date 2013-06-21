@@ -451,6 +451,14 @@ table {
 /* ==========================================================================
    Custom Helper Styles
    ========================================================================== */
+.no-js .no-js {
+  display: block;
+}
+
+.js .no-js {
+  display: none;
+}
+
 /* HTML5 Boilerplate Styles */
 /* Clearfix */
 .clearfix {
@@ -521,6 +529,50 @@ img {
   width: auto;
 }
 
+/* 
+    Media List Styles (image next to text)
+
+    Based on work by:
+    Nicole Sullivan http://goo.gl/5GrKJ
+    Nicolas Gallagher http://jsfiddle.net/necolas/rZvEF/
+*/
+.imgblock:before, .imgblock:after {
+  content: " ";
+  display: table;
+}
+.imgblock:after {
+  clear: both;
+}
+.imgblock > li:before, .imgblock > li:after {
+  content: " ";
+  display: table;
+}
+.imgblock > li:after {
+  clear: both;
+}
+.imgblock .img {
+  float: left;
+  margin: 0 10px 10px 0;
+  /* Set some default margin */
+}
+.imgblock .img img {
+  display: block;
+}
+.imgblock .content {
+  /*
+   * 1. Create new block formatting context in modern browsers
+   * 2. Avoid shrink-wrap behaviour of table-cell
+   * 3. Override for IE6/7
+   * 4. Create new block formatting context in IE6/7
+   * Alternatively, use 'overflow:hidden' if clipping is OK
+  */
+  display: table-cell;
+  /* 1 */
+  width: 10000px;
+  /* 2 */
+}
+
+/* Reset form elements */
 /* ==========================================================================
    Base Styles
    ========================================================================== */
@@ -737,7 +789,6 @@ body {
 
 /* Grid */
 .col {
-  *zoom: 1;
   float: left;
 }
 .col:before, .col:after {
@@ -753,7 +804,6 @@ body {
 }
 
 .row {
-  *zoom: 1;
   clear: both;
 }
 .row:before, .row:after {
